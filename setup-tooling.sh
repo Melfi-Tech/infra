@@ -1,4 +1,5 @@
 # Setup tooling
+. /root/.bashrc
 nvm install 20
 
 npm i ts-node -g
