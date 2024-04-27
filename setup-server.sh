@@ -26,4 +26,7 @@ dotenv -e $1 -- bash ./setup-configs.sh $data_config_dir
 
 # Run docker configs
 
-for i in *compose.yml; do echo "starting $i" && dotenv -e $1 -- docker-compose -f $i up&; done
+for i in *compose.yml; do 
+  echo "starting $i"
+  dotenv -e $1 -- docker-compose -f $i up& 
+done
