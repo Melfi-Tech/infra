@@ -5,7 +5,7 @@ if [ -z ${2+x} ]; then echo "config destinations not provided" && exit 1; fi
 data_config_dir=$2/config
 
 # Install system dependencies
-apt install ufw docker docker-compose
+apt install ufw docker docker-compose unzip
 ufw allow 22
 ufw enable
 
