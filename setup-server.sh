@@ -13,4 +13,4 @@ ufw enable
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 curl -fsSL https://bun.sh/install | bash
 
-exec bash setup-tooling.sh
+bash setup-tooling.sh
