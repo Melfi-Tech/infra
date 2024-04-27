@@ -12,7 +12,8 @@ ufw enable
 # Install NVM & Bun
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 curl -fsSL https://bun.sh/install | bash
-source $HOME/.bashrc
+
+source /root/.bashrc
 
 nvm install 20
 
