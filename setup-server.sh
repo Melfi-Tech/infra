@@ -13,7 +13,7 @@ ufw enable
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 curl -fsSL https://bun.sh/install | bash
 
-source /root/.bashrc
+exec bash
 
 nvm install 20
 
