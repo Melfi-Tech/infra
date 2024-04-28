@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Setup configs
-dotenv -e $1 -- bash ./setup-configs.sh $data_config_dir
+dotenv -e $1 -- bash ./setup-configs.sh $2
 
 # Run docker configs
 
