@@ -3,6 +3,7 @@ if [ -z ${2+x} ]; then echo "config destinations not provided" && exit 1; fi
 
 # Create necessary directories
 data_config_dir=$2/config
+mkdir -p $data_config_dir
 
 # Install system dependencies
 apt install ufw docker docker-compose unzip
