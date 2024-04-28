@@ -1,4 +1,4 @@
-if [ -z ${2+x} ]; then echo "config destinations not provided" && exit 1; fi
+if [ -z ${1+x} ]; then echo "config destinations not provided" && exit 1; fi
 
 postgres_compose=$1/pg_compose.yml
 
