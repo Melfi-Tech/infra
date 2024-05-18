@@ -17,19 +17,23 @@ services:
       POSTGRES_PASSWORD: $PG_PASS
     volumes:
       - local_pgdata:/var/lib/postgresql/data
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin4_container
+  bytebase:
+    image: bytebase/bytebase:2.16.0
+    container_name: bytebase
     restart: always
     ports:
-      - "8888:80"
+      - "8888:8080"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@melfi.com
       PGADMIN_DEFAULT_PASSWORD: $PG_PASS
     volumes:
-      - pgadmin-data:/var/lib/pgadmin
+      - bytebase-data:/var/opt/bytebase
 
 volumes:
   local_pgdata:
-  pgadmin-data:
+  bytebase-data:
 EOF
+
+ufw allow 8888
+ufw allow 5432
+
