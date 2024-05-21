@@ -6,7 +6,7 @@ data_config_dir=$2/config
 mkdir -p $data_config_dir
 
 # Install system dependencies
-apt install ufw docker.io docker-compose unzip
+apt install ufw docker.io docker-compose-v2 unzip
 ufw allow 22
 ufw enable
 

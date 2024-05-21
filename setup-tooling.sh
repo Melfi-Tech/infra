@@ -21,5 +21,5 @@ dotenv -e $1 -- bash ./setup-configs.sh $2
 
 for i in $2/*compose.yml; do 
   echo "starting $i"
-  dotenv -e $1 -- docker-compose -f $i up& 
+  dotenv -e $1 -- docker compose -f $i up& 
 done
