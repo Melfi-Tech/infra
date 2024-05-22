@@ -17,6 +17,9 @@ fi
 # Setup configs
 dotenv -e $1 -- bash ./setup-configs.sh $2
 
+nginx -s reload
+certbot --nginx -d admin.usemelon.co -d api.usemelon.co -d api.staging.usemelon.co
+
 # Run docker configs
 
 for i in $2/*compose.yml; do 

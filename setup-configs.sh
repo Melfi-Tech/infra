@@ -34,6 +34,40 @@ volumes:
   bytebase-data:
 EOF
 
+# Setup nginx configuration
+cat << EOF >> /etc/nginx/sites-enabled/default
+
+server {
+  server_name api.usemelon.co;
+
+  location / {
+    proxy_set_header Host "api.usemelon.co";
+    proxy_set_header X-Real-IP \$remote_addr;
+    proxy_pass  http://127.0.0.1:5050;
+  }
+}
+
+server {
+  server_name api.staging.usemelon.co;
+
+  location / {
+    proxy_set_header Host "api.staging.usemelon.co";
+    proxy_set_header X-Real-IP \$remote_addr;
+    proxy_pass  http://127.0.0.1:5051;
+  }
+}
+
+server {
+  server_name admin.usemelon.co;
+
+  location / {
+    proxy_set_header Host "admin.usemelon.co";
+    proxy_set_header X-Real-IP \$remote_addr;
+    proxy_pass  http://127.0.0.1:4173;
+  }
+}
+EOF
+
 ufw allow 8888
 ufw allow 5432
 

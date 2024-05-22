@@ -6,7 +6,7 @@ data_config_dir=$2/config
 mkdir -p $data_config_dir
 
 # Install system dependencies
-apt install ufw docker.io docker-compose-v2 unzip
+apt install ufw docker.io docker-compose-v2 unzip nginx certbot python3-certbot-nginx
 ufw allow 22
 ufw enable
 
